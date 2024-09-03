@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RewriteRecipes", "RewriteRecipes\RewriteRecipes.csproj", "{D41242D3-BFDA-4C3A-A6CB-BA2AEEB56DE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFB1}") = "RewriteRecipesTests", "RewriteRecipesTests\RewriteRecipesTests.csproj", "{D41242D3-BFDA-4C3A-A6CB-BA2AEEB56DE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D41242D3-BFDA-4C3A-A6CB-BA2AEEB56DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D41242D3-BFDA-4C3A-A6CB-BA2AEEB56DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D41242D3-BFDA-4C3A-A6CB-BA2AEEB56DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D41242D3-BFDA-4C3A-A6CB-BA2AEEB56DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D41242D3-BFDA-4C3A-A6CB-BA2AEEB56DE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D41242D3-BFDA-4C3A-A6CB-BA2AEEB56DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D41242D3-BFDA-4C3A-A6CB-BA2AEEB56DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D41242D3-BFDA-4C3A-A6CB-BA2AEEB56DE1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
