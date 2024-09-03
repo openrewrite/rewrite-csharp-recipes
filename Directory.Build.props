@@ -1,0 +1,8 @@
+<Project>
+    <PropertyGroup>
+        <Company>Moderne Inc.</Company>
+        <PackageIcon>openrewrite.png</PackageIcon>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <Version>0.1.0</Version>
+    </PropertyGroup>
+</Project>

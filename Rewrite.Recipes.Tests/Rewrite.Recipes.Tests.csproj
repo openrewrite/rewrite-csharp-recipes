@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\RewriteRecipes\RewriteRecipes.csproj" />
+      <ProjectReference Include="..\Rewrite.Recipes\Rewrite.Recipes.csproj" />
     </ItemGroup>
 
 </Project>

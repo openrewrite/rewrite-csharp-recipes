@@ -5,7 +5,6 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>Rewrite.Recipes</RootNamespace>
-        <Version>1.0.3</Version>
     </PropertyGroup>
 
     <ItemGroup>

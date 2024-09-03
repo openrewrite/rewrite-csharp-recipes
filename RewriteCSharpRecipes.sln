@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RewriteRecipes", "RewriteRecipes\RewriteRecipes.csproj", "{D41242D3-BFDA-4C3A-A6CB-BA2AEEB56DE5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rewrite.Recipes", "Rewrite.Recipes\Rewrite.Recipes.csproj", "{D41242D3-BFDA-4C3A-A6CB-BA2AEEB56DE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFB1}") = "RewriteRecipesTests", "RewriteRecipesTests\RewriteRecipesTests.csproj", "{D41242D3-BFDA-4C3A-A6CB-BA2AEEB56DE1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFB1}") = "Rewrite.Recipes.Tests", "Rewrite.Recipes.Tests\Rewrite.Recipes.Tests.csproj", "{D41242D3-BFDA-4C3A-A6CB-BA2AEEB56DE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
