@@ -3,6 +3,6 @@
         <Company>Moderne Inc.</Company>
         <PackageIcon>openrewrite.png</PackageIcon>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-        <Version>0.2.0</Version>
+        <Version>0.2.1</Version>
     </PropertyGroup>
 </Project>
