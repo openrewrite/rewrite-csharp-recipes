@@ -8,8 +8,13 @@ namespace Rewrite.Recipes.Properties;
 
 using ExecutionContext = ExecutionContext;
 
-public class AddProperty(string property, string value) : Recipe
+public class AddProperty(
+    [Option("Property Name", "A name of the property to add", "test")] string property,
+    [Option("Value", "Value to specify for the given property name", "some-value")] string value) : Recipe
 {
+    public override string DisplayName => "Add Property";
+    public override string Description => "Add specified property to a property file";
+
     public override ITreeVisitor<Tree, ExecutionContext> GetVisitor()
     {
         return new AddPropertyVisitor(property, value);

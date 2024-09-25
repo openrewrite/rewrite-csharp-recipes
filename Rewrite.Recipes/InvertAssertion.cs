@@ -9,6 +9,9 @@ namespace Rewrite.Recipes;
 public class InvertAssertion : Recipe
 {
     private const string ASSERT_TRUE = "Xunit.Assert.True";
+    
+    public override string DisplayName => "Invert Assertion";
+    public override string Description => "Find for all the `Assert.True(!someBool)` and transform it into `Assert.False(someBool)`.";
 
     public override ITreeVisitor<Tree, ExecutionContext> GetVisitor()
     {

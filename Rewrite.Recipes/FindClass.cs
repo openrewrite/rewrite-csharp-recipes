@@ -6,15 +6,18 @@ using ExecutionContext = Rewrite.Core.ExecutionContext;
 
 namespace Rewrite.Recipes;
 
-public class FindClass(string? description): Recipe
+public class FindClass([Option(displayName: "Description", description: "A special sign to specifically highlight the class found by the recipe", example: "~~>")] string? description = null): Recipe
 {
+    public override string DisplayName => "Find Class";
+
+    public override string Description => "Search for all the classes in the given source";
 
     public override ITreeVisitor<Tree, ExecutionContext> GetVisitor()
     {
         return new FindClassVisitor(description);
     }
 
-    private class FindClassVisitor(string? description) : JavaVisitor<ExecutionContext>
+    private class FindClassVisitor(string? description = null) : JavaVisitor<ExecutionContext>
     {
         public override J VisitClassDeclaration(J.ClassDeclaration classDeclaration, ExecutionContext ctx)
         {

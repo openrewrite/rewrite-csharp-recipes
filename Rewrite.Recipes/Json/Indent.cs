@@ -10,6 +10,10 @@ using ExecutionContext = ExecutionContext;
 
 public class Indent : Recipe
 {
+    public override string DisplayName => "Indent";
+    
+    public override string Description => "Fix JSON indentation"; 
+    
     public override ITreeVisitor<Tree, ExecutionContext> GetVisitor()
     {
         return new IndentVisitor();

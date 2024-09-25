@@ -9,7 +9,7 @@ using static Assertions;
 [Collection("C# remoting")]
 public class Tests : RewriteTest
 {
-    public override void Defaults(RecipeSpec spec)
+    protected override void Defaults(RecipeSpec spec)
     {
         spec.Recipe = new InvertAssertion();
     }
