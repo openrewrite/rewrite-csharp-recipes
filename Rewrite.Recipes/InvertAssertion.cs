@@ -23,7 +23,7 @@ public class InvertAssertion : Recipe
         public override J.MethodInvocation VisitMethodInvocation(J.MethodInvocation method, ExecutionContext ctx)
         {
             // Assert.True(!a);
-            var mi = (J.MethodInvocation)base.VisitMethodInvocation(method, ctx);
+            var mi = (base.VisitMethodInvocation(method, ctx) as J.MethodInvocation)!;
 
             if (!ASSERT_TRUE.EndsWith(ExtractName(mi)) || !IsUnaryOperatorNot(mi)) return mi;
 
@@ -39,7 +39,7 @@ public class InvertAssertion : Recipe
 
         private static bool IsUnaryOperatorNot(J.MethodInvocation method)
         {
-            return method.Arguments is [J.Unary { Operator: J.Unary.Type.Not }];
+            return method.Arguments is [J.Unary { Operator: J.Unary.Types.Not }];
         }
     };
 }

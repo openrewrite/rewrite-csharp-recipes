@@ -2,15 +2,15 @@ using FluentAssertions;
 using Rewrite.Core;
 using Rewrite.Core.Marker;
 using Rewrite.Recipes;
-using Rewrite.RewriteJava;
 using Rewrite.RewriteJava.Tree;
 using Rewrite.Test;
 using Xunit;
+using Xunit.Abstractions;
 using FileAttributes = Rewrite.Core.FileAttributes;
 
 namespace Rewrite.Java.Tests;
 
-public class FindClassTests : RewriteTest
+public class FindClassTests(ITestOutputHelper output) : RewriteTest(output)
 {
 
     [Fact]
@@ -28,7 +28,7 @@ public class FindClassTests : RewriteTest
                     [],
                     [],
                     new J.ClassDeclaration.Kind(Tree.RandomId(), Space.EMPTY, Markers.EMPTY, [],
-                        J.ClassDeclaration.Kind.Type.Class),
+                        J.ClassDeclaration.Kind.Types.Class),
                     new J.Identifier(Tree.RandomId(), Space.EMPTY, Markers.EMPTY, [], "Foo", null, null),
                     null,
                     null,

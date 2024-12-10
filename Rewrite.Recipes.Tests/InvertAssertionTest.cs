@@ -1,13 +1,14 @@
-using Rewrite.RewriteCSharp.Test.Api;
 using Rewrite.Test;
+using Rewrite.Test.CSharp;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Rewrite.Recipes;
 
 using static Assertions;
 
 [Collection("C# remoting")]
-public class Tests : RewriteTest
+public class Tests(ITestOutputHelper output) : RewriteTest(output)
 {
     protected override void Defaults(RecipeSpec spec)
     {

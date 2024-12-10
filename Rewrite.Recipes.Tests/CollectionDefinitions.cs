@@ -1,4 +1,4 @@
-using Rewrite.RewriteCSharp.Test;
+using Rewrite.Test.Engine.Remote;
 using Xunit;
 
 namespace Rewrite.CSharp.Tests;

@@ -8,11 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Rewrite.CSharp" Version="0.8.4" />
-      <PackageReference Include="Rewrite.Properties" Version="0.8.4" />
-      <PackageReference Include="Rewrite.Json" Version="0.8.4" />
-      <PackageReference Include="Rewrite.Java" Version="0.8.4" />
-      <PackageReference Include="Rewrite.Core" Version="0.8.4" />
+      <PackageReference Include="Rewrite.CSharp" Version="$(RewriteVersion)" />
+      <PackageReference Include="Rewrite.Properties" Version="$(RewriteVersion)" />
+      <PackageReference Include="Rewrite.Json" Version="$(RewriteVersion)" />
+      <PackageReference Include="Rewrite.Java" Version="$(RewriteVersion)" />
+      <PackageReference Include="Rewrite.Core" Version="$(RewriteVersion)" />
     </ItemGroup>
 
 </Project>

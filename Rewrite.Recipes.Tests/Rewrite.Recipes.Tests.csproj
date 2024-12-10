@@ -15,9 +15,9 @@
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.0-release-24352-06" />
         <PackageReference Include="xunit" Version="2.8.1" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.8.1"/>
-        <PackageReference Include="Rewrite.CSharp.Test" Version="0.8.0-preview-10"/>
-        <PackageReference Include="Rewrite.CSharp.Test.Api" Version="0.8.4"/>
-        <PackageReference Include="Rewrite.Test" Version="0.8.4"/>
+        <PackageReference Include="Rewrite.Test.CSharp" Version="$(RewriteVersion)"/>
+        <PackageReference Include="Rewrite.Test.Engine.Remote" Version="$(RewriteVersion)"/>
+        <PackageReference Include="Rewrite.Test" Version="$(RewriteVersion)"/>
     </ItemGroup>
 
     <ItemGroup>

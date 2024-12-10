@@ -1,0 +1,59 @@
+---
+name: publish
+
+on:
+  push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+
+      - v[0-9]+.[0-9]+.[0-9]+-rc.[0-9]+
+
+env:
+  RELEASE_BUILD: "true"
+  RELEASE_PUBLICATION: "true"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: set-up-jdk
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: set-up-gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: build
+        run: |
+          dotnet publish RewriteCSharpRecipes.sln
+
+      - name: Update Directory.Build.props version from tag
+        working-directory: Rewrite
+        run: |
+          sed -i -E "s/<VersionPrefix>.*<\/VersionPrefix>/<VersionPrefix>${GITHUB_REF#refs/tags/v}<\/VersionPrefix>/g" Directory.Build.props
+
+      - name: publish-dotnet-release
+        if: (!contains(github.ref, '-rc.'))
+        run: |
+          mkdir ~/localNugetFeed
+          dotnet pack --output ~/localNuGetFeed RewriteCSharpRecipes.sln
+          dotnet nuget push ~/localNuGetFeed/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{env.NUGET_API_KEY}}
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+  
+      - name: Commit version updates
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add Directory.Build.props
+          git commit -m "bump version ${GITHUB_REF#refs/tags/}"
+          git push https://${GH_TOKEN}@github.com/openrewrite/rewrite-csharp.git HEAD:main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
