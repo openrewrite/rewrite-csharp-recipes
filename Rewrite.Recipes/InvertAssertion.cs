@@ -25,7 +25,9 @@ public class InvertAssertion : Recipe
             // Assert.True(!a);
             var mi = (base.VisitMethodInvocation(method, ctx) as J.MethodInvocation)!;
 
-            if (!ASSERT_TRUE.EndsWith(ExtractName(mi)) || !IsUnaryOperatorNot(mi)) return mi;
+            if (!ASSERT_TRUE.EndsWith(ExtractName(mi)) || !IsUnaryOperatorNot(mi)) {
+                return mi;
+            }
 
             var unary = (J.Unary)mi.Arguments[0];
 
